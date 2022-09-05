@@ -1,4 +1,4 @@
-## MiniProfiler.Fody
+## AutoMiniProfiler.Fody
 Injects [Miniprofiler](http://miniprofiler.com/) into your code use [Fody](https://github.com/Fody/Fody/).
 
 ## The nuget package  [![NuGet Status](http://img.shields.io/nuget/v/MiniProfiler.Fody.svg?style=flat)](https://www.nuget.org/packages/MiniProfiler.Fody/)
@@ -53,10 +53,10 @@ https://nuget.org/packages/MiniProfiler.Fody/
 
     <?xml version="1.0" encoding="utf-8"?>
     <Weavers>
-        <MiniProfiler profilerConstructors="false" profilerProperties="false">
+        <AutoMiniProfiler profilerConstructors="false" profilerProperties="false">
             <ProfilerOn namespace="Root+*" class="public" method="public" />
             <NoProfiler namespace="Root.Generated" /> 
-        </MiniProfiler>
+        </AutoMiniProfiler>
     </Weavers>
 
 ### Use Attribute

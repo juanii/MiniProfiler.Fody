@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+    <Authors>JeffDu</Authors>
+    <Description>Injects MiniProfiler steps.</Description>
+    <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)).</Copyright>
+    <PackageOutputPath>$(SolutionDir)nugets</PackageOutputPath>
+    <PackageProjectUrl>https://github.com/juanii/MiniProfiler.Fody/tree/fody-v6</PackageProjectUrl>
+    <Version>0.1.3</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <DisableFody>true</DisableFody>
+    <PackageTags>MiniProfiler, ILWeaving, Fody, Cecil</PackageTags>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="EnsureMiniProfilerReference.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="EnsureMiniProfilerReference.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+		<PackageReference Include="Fody" Version="6.6.3" PrivateAssets="None" />
+		<PackageReference Include="FodyPackaging" Version="6.6.3" PrivateAssets="All" />
+		<PackageReference Include="MiniProfiler" Version="3.2.0.157" PrivateAssets="None" />
+	</ItemGroup>
+</Project>

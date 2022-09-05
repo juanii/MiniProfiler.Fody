@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoMiniProfiler.Fody", "AutoMiniProfiler.Fody\AutoMiniProfiler.Fody.csproj", "{3844BFA2-4AD8-4AB9-AACA-F905AB10CC1D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoMiniProfiler", "AutoMiniProfiler\AutoMiniProfiler.csproj", "{B3DFECEF-25C3-4C1D-BD4B-1ECA037FD83F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3844BFA2-4AD8-4AB9-AACA-F905AB10CC1D} = {3844BFA2-4AD8-4AB9-AACA-F905AB10CC1D}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3844BFA2-4AD8-4AB9-AACA-F905AB10CC1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3844BFA2-4AD8-4AB9-AACA-F905AB10CC1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3844BFA2-4AD8-4AB9-AACA-F905AB10CC1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3844BFA2-4AD8-4AB9-AACA-F905AB10CC1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3DFECEF-25C3-4C1D-BD4B-1ECA037FD83F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3DFECEF-25C3-4C1D-BD4B-1ECA037FD83F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3DFECEF-25C3-4C1D-BD4B-1ECA037FD83F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3DFECEF-25C3-4C1D-BD4B-1ECA037FD83F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A92CC8C-BE80-411D-A178-51F8C61CC109}
+	EndGlobalSection
+EndGlobal
