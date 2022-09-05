@@ -139,5 +139,19 @@ namespace AutoMiniProfiler.Fody.Helpers
         {
             return (methodDefinition.IsGetter || methodDefinition.IsSetter);
         }
+
+        public static void RemoveAllAttributes(this ICustomAttributeProvider definition)
+        {
+            var customAttributes = definition.CustomAttributes;
+
+            var attributes = customAttributes
+                .Where(x => x.AttributeType.Namespace == AppConsts.AttributesNamespace)
+                .ToArray();
+
+            foreach (var attribute in attributes)
+            {
+                customAttributes.Remove(attribute);
+            }
+        }
     }
 }

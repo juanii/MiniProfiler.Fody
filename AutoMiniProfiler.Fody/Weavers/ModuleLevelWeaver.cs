@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using AutoMiniProfiler.Fody.Helpers;
 using Mono.Cecil;
@@ -51,6 +52,26 @@ namespace AutoMiniProfiler.Fody.Weavers
             {
                 var weaver = factory.Create(type);
                 weaver.Execute();
+            }
+
+            RemoveAttributes(_moduleDefinition.GetAllTypes());
+        }
+
+        private void RemoveAttributes(IEnumerable<TypeDefinition> types)
+        {
+            foreach (var typeDefinition in types)
+            {
+                typeDefinition.RemoveAllAttributes();
+
+                foreach (var method in typeDefinition.Methods)
+                {
+                    method.RemoveAllAttributes();
+                }
+
+                foreach (var property in typeDefinition.Properties)
+                {
+                    property.RemoveAllAttributes();
+                }
             }
         }
     }
