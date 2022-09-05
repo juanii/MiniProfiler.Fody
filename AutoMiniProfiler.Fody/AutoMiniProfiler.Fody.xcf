@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:choice minOccurs="0" maxOccurs="unbounded">
+		<xs:element name="ProfilerOn">
+			<xs:annotation>
+				<xs:documentation>IOU</xs:documentation>
+			</xs:annotation>
+			<xs:complexType>
+				<xs:attribute name="namespace">
+					<xs:annotation>
+						<xs:documentation>IOU</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="[_\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}][\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}\p{Nd}\p{Pc}\p{Mn}\p{Mc}\p{Cf}]*(\.[_\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}][\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}\p{Nd}\p{Pc}\p{Mn}\p{Mc}\p{Cf}]*)*(\.\*|\+\*)?" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="class" use="required">
+					<xs:annotation>
+						<xs:documentation>IOU</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="public" />
+							<xs:enumeration value="internal" />
+							<xs:enumeration value="protected" />
+							<xs:enumeration value="private" />
+							<xs:enumeration value="none" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="method" use="required">
+					<xs:annotation>
+						<xs:documentation>IOU</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="public" />
+							<xs:enumeration value="internal" />
+							<xs:enumeration value="protected" />
+							<xs:enumeration value="private" />
+							<xs:enumeration value="none" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="NoProfiler">
+			<xs:annotation>
+				<xs:documentation>IOU</xs:documentation>
+			</xs:annotation>
+			<xs:complexType>
+				<xs:attribute name="namespace">
+					<xs:annotation>
+						<xs:documentation>IOU</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="[_\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}][\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}\p{Nd}\p{Pc}\p{Mn}\p{Mc}\p{Cf}]*(\.[_\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}][\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}\p{Nd}\p{Pc}\p{Mn}\p{Mc}\p{Cf}]*)*(\.\*|\+\*)?" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:complexType>
+		</xs:element>
+	</xs:choice>
+	<xs:attribute name="profilerConstructors" type="xs:boolean" default="false">
+		<xs:annotation>
+			<xs:documentation>IOU</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="profilerProperties" type="xs:boolean" default="false">
+		<xs:annotation>
+			<xs:documentation>IOU</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+</xs:complexType>

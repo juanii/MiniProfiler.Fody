@@ -30,8 +30,8 @@ namespace AutoMiniProfiler.Fody.Helpers
         {
             try
             {
-                _profilerConstructorsFlag = bool.Parse(GetAttributeValueOrDefault(element, "profilerConstructors", bool.FalseString));
-                _profilerPropertiesFlag = bool.Parse(GetAttributeValueOrDefault(element, "profilerProperties", bool.FalseString));
+                _profilerConstructorsFlag = bool.Parse(GetBoolString(GetAttributeValueOrDefault(element, "profilerConstructors", bool.FalseString)));
+                _profilerPropertiesFlag = bool.Parse(GetBoolString(GetAttributeValueOrDefault(element, "profilerProperties", bool.FalseString)));
 
                 _filterConfigElements = element.Descendants().ToList();
             }
@@ -77,6 +77,20 @@ namespace AutoMiniProfiler.Fody.Helpers
         {
             var attribute = element.Attribute(attributeName);
             return attribute != null ? attribute.Value : defaultValue;
+        }
+
+        private static string GetBoolString(string value)
+        {
+            // XML boolean admits 1 and 0 for true and false
+            switch (value)
+            {
+                case "0":
+                    return bool.FalseString;
+                case "1":
+                    return bool.TrueString;
+                default:
+                    return value;
+            }
         }
     }
 }
