@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+		<DisableFody>true</DisableFody>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\AutoMiniProfiler\EnsureMiniProfilerReference.cs" Link="EnsureMiniProfilerReference.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MiniProfiler" Version="3.2.0.157" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AutoMiniProfiler\AutoMiniProfiler.csproj" />
+  </ItemGroup>
+
+</Project>
